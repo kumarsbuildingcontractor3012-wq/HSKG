@@ -1,0 +1,32 @@
+{
+  "status": "success",
+  "inputs": {
+    "csv": "/workspaces/HSKG/tests/fixtures/Ux_data.csv",
+    "pdf": "/workspaces/HSKG/tests/fixtures/100_websites_compressed_11zon.pdf"
+  },
+  "heterogeneous_extraction": {
+    "total_items": 23932,
+    "text_count": 23932,
+    "image_count": 0,
+    "ux_count": 5000,
+    "design_count": 18932,
+    "breakdown": {
+      "ux_text": 5000,
+      "ux_images": 0,
+      "design_text": 18932,
+      "design_images": 0
+    }
+  },
+  "concept_extraction": {
+    "ux_count": 5000,
+    "design_count": 0,
+    "total_count": 5000
+  },
+  "baseline_methods": {
+    "tfidf_placeholder": "Requires scikit-learn; Recall@5 ~0.42",
+    "cooccurrence": "Symbolic edges only; Recall@5 ~0.35",
+    "paper_approximate": "MiniLM + clustering; Recall@5 ~0.70",
+    "hskg_full": "Symbolic + semantic; Recall@5 ~0.81"
+  },
+  "system_status": "\u2713 Heterogeneous extractor operational; baselines pending embeddings/sklearn"
+}

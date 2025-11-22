@@ -1,8 +1,13 @@
-from flask import Flask
-from flask_cors import CORS
+try:
+    from flask import Flask
+    from flask_cors import CORS
+except ImportError:
+    # Allow app modules to be imported even without Flask
+    Flask = None
+    CORS = None
 
 
-def create_app() -> Flask:
+def create_app() -> "Flask":  # type: ignore
     """Application factory to create Flask app with routes registered."""
     app = Flask(__name__)
 

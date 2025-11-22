@@ -1,0 +1,43 @@
+{
+  "timestamp": "2025-11-21 20:52:11",
+  "inputs": {
+    "ux_data_csv": "/workspaces/HSKG/tests/fixtures/Ux_data.csv",
+    "design_pdf": "/workspaces/HSKG/tests/fixtures/100_websites_compressed_11zon.pdf"
+  },
+  "data_extraction": {
+    "heterogeneous_items": {
+      "total_items": 23932,
+      "text_count": 23932,
+      "image_count": 0,
+      "ux_count": 5000,
+      "design_count": 18932,
+      "breakdown": {
+        "ux_text": 5000,
+        "ux_images": 0,
+        "design_text": 18932,
+        "design_images": 0
+      }
+    },
+    "status": "success",
+    "ux_concepts_count": 5000,
+    "design_concepts_count": 0,
+    "total_concepts": 5000,
+    "embeddings_available": false
+  },
+  "baselines": {
+    "tfidf": {
+      "recall_at_5": 0.0,
+      "avg_top5_sim": 0.0,
+      "theta": 0.5
+    },
+    "cooccurrence": {
+      "recall_at_5": 0.0,
+      "method": "symbolic_only"
+    }
+  },
+  "hskg_methods": {},
+  "ablations": {},
+  "summary": {
+    "status": "complete"
+  }
+}
