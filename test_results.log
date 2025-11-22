@@ -1,0 +1,12 @@
+============================= test session starts ==============================
+platform linux -- Python 3.8.20, pytest-8.3.5, pluggy-1.5.0 -- /workspaces/HSKG/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /workspaces/HSKG
+plugins: timeout-2.4.0
+collecting ... collected 8 items
+
+tests/test_end_to_end.py::test_end_to_end_run_creates_outputs PASSED     [ 12%]
+tests/test_heterogeneous_data.py::test_heterogeneous_extraction_text_only PASSED [ 25%]
+tests/test_heterogeneous_data.py::test_heterogeneous_text_modality PASSED [ 37%]
+tests/test_heterogeneous_data.py::test_heterogeneous_item_structure PASSED [ 50%]
+tests/test_image_processing.py::test_extract_images_from_real_pdf 
