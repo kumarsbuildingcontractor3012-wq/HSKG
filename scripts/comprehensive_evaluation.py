@@ -43,6 +43,7 @@ except ImportError:
 # HSKG imports
 from app.ingest.csv_loader import load_feedback_from_csv
 from app.ingest.pdf_loader import extract_pdf_chunks
+from app.ingest.egfe_loader import load_egfe_as_design_texts
 from app.nlp.concept_extractor import extract_concepts
 from app.ingest.heterogeneous_processor import (
     extract_heterogeneous_data,
@@ -116,13 +117,30 @@ def evaluate_system() -> Dict:
     ux_concepts = extract_concepts(feedbacks, source="ux")
     design_concepts = extract_concepts(pdf_chunks, source="design")
 
-    all_concepts = ux_concepts + design_concepts
+    # EGFE-dataset: UI element metadata extracted as design concepts
+    egfe_concepts = []
+    try:
+        egfe_dir = root / "tests" / "fixtures" / "EGFE-dataset"
+        if egfe_dir.exists():
+            egfe_texts = load_egfe_as_design_texts(str(egfe_dir))
+            egfe_concepts = extract_concepts(egfe_texts, source="design")
+            print(f"  ✓ Loaded {len(egfe_concepts)} EGFE design concepts")
+        else:
+            print(f"  ℹ EGFE-dataset not found at {egfe_dir}")
+    except Exception as e:
+        print(f"  ⚠ EGFE-dataset extraction skipped ({e})")
+
+    # Combine all design concepts (PDF + EGFE)
+    all_design_concepts = design_concepts + egfe_concepts
+    all_concepts = ux_concepts + all_design_concepts
     all_texts = [c.text for c in all_concepts]
     ux_indices = list(range(len(ux_concepts)))
     design_indices = list(range(len(ux_concepts), len(all_concepts)))
 
     report["data_extraction"]["ux_concepts_count"] = len(ux_concepts)
-    report["data_extraction"]["design_concepts_count"] = len(design_concepts)
+    report["data_extraction"]["design_concepts_count"] = len(all_design_concepts)
+    report["data_extraction"]["design_concepts_from_pdf"] = len(design_concepts)
+    report["data_extraction"]["design_concepts_from_egfe"] = len(egfe_concepts)
     report["data_extraction"]["total_concepts"] = len(all_concepts)
 
     # Try to load embeddings

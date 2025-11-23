@@ -5,7 +5,7 @@
 
 ---
 
-## 📋 Package Contents
+## Package Contents
 
 ### **1. Academic Paper**
 - **File:** `paper.md`
@@ -43,7 +43,7 @@
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### **Install & Run (5 minutes)**
 
@@ -90,7 +90,7 @@ outputs/
 
 ---
 
-## 📊 Key Results
+## Key Results
 
 ### **Data Extraction**
 - **UX Feedback (CSV):** 519 rows → 5,000 concepts
@@ -111,25 +111,25 @@ outputs/
 | **Recall@5** | ~0.65 | Top-5 design matches for UX queries |
 | **Silhouette Score** | 0.58 | Cluster quality (hybrid > symbolic > baseline) |
 | **Pattern Discovery** | 250+ | High-confidence UX↔Design associations |
-| **Privacy Compliance** | ✅ Full | 100% offline, no external APIs |
+| **Privacy Compliance** | Full | 100% offline, no external APIs |
 | **Runtime** | <2 min | Complete pipeline on CPU |
 
 ### **Baseline Comparisons**
 
 | Method | Recall@5 | Approach | Privacy |
 |--------|----------|----------|---------|
-| TF-IDF | 0.42 | Bag-of-words cosine | ✅ Offline |
-| Co-occurrence | 0.35 | Symbolic links | ✅ Offline |
-| Paper (Yang et al.) | ~0.70 | MiniLM + HDBSCAN | ✅ Offline |
-| **HSKG-Twin (Ours)** | **0.65** | **Hybrid symbolic + semantic** | ✅ **Full offline** |
+| TF-IDF | 0.42 | Bag-of-words cosine | Offline |
+| Co-occurrence | 0.35 | Symbolic links | Offline |
+| Paper (Yang et al.) | ~0.70 | MiniLM + HDBSCAN | Offline |
+| **HSKG-Twin (Ours)** | **0.65** | **Hybrid symbolic + semantic** | Full offline |
 
 ---
 
-## 🔬 Novelty Highlights
+## Novelty Highlights
 
 ### **Why HSKG-Twin Matters**
 
-1. **Fully Offline ⭐⭐⭐⭐⭐**
+1. **Fully Offline**
    - Zero LLM API calls (unlike Graphiti, ChatGPT-based approaches)
    - Privacy-compliant for regulated industries
    - Reproducible science (no proprietary model versions)
@@ -181,11 +181,11 @@ EGFE JSON → Extract design concepts (metadata parsing)
 | `app/nlp/concept_extractor.py` | spaCy-based extraction | 100 |
 | `app/graph/builder.py` | Graph construction | 150 |
 | `scripts/comprehensive_evaluation.py` | Full evaluation | 250 |
-| **Total production code** | ~1,500 LOC | ✅ Lean, maintainable |
+| **Total production code** | ~1,500 LOC | Lean, maintainable |
 
 ---
 
-## ✅ Validation Checklist
+## Validation Checklist
 
 - [x] **All tests pass** (6/6 fast tests in ~5 seconds)
 - [x] **Full pipeline implemented** (ingestion → extraction → graph → eval)
@@ -241,7 +241,7 @@ EGFE JSON → Extract design concepts (metadata parsing)
 
 **Repository:** https://github.com/mithradevi2309/HSKG  
 **Date Completed:** November 21, 2025  
-**Status:** ✅ Ready for academic publication
+**Status:** Ready for academic publication
 
 **To reproduce:**
 ```bash
