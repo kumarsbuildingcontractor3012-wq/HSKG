@@ -1,4 +1,4 @@
-# 🎯 HSKG EGFE Fix - Quick Reference Guide
+#  HSKG EGFE Fix - Quick Reference Guide
 
 ## The One-Sentence Fix
 
@@ -82,14 +82,14 @@ PYTHONPATH=. python3 scripts/comprehensive_evaluation.py
 
 ## Impact
 
-- ✅ **Design concepts**: 0 → 18,932
-- ✅ **Total concepts**: 5,000 → 23,932  
-- ✅ **Graph size**: 5K → 23.9K nodes
-- ✅ **Paper readiness**: Incomplete → Complete
+-  **Design concepts**: 0 → 18,932
+-  **Total concepts**: 5,000 → 23,932  
+-  **Graph size**: 5K → 23.9K nodes
+-  **Paper readiness**: Incomplete → Complete
 
 ## Status
 
-✅ **FIXED AND VERIFIED**
+ **FIXED AND VERIFIED**
 
 All 18,932 EGFE UI elements are now:
 1. Loaded from EGFE-dataset directory
